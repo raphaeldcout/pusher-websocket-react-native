@@ -188,8 +188,8 @@ export class Pusher {
           for (const _userId in decodedData?.presence?.hash) {
             const userInfo = decodedData?.presence?.hash[_userId];
             var member = new PusherMember(_userId, userInfo);
-            channel.members.set(member.userId, member);
-            if (_userId === userId) {
+            channel?.members.set(member.userId, member);
+            if (_userId === userId && channel && member) {
               channel.me = member;
             }
           }
@@ -204,7 +204,7 @@ export class Pusher {
             channelName,
             decodedData.subscription_count
           );
-          channel.onSubscriptionCount?.(decodedData.subscription_count);
+          channel?.onSubscriptionCount?.(decodedData.subscription_count);
           break;
         default:
           const pusherEvent = new PusherEvent(event);
