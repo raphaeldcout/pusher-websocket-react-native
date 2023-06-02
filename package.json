@@ -1,6 +1,6 @@
 {
   "name": "@raphaeldcoutbr/pusher-websocket-react-native-gg",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "Pusher Channels Client for React Native",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
